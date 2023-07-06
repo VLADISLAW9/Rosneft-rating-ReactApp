@@ -1,0 +1,86 @@
+[
+	{
+		"id": 1,
+		"name": "Виктория",
+		"email": "viktoria@mail.ru",
+		"surname": "Понамарева",
+		"familyname": "Владимировна",
+		"achivements": ["https://cdn1.ozone.ru/s3/multimedia-f/6049799823.jpg"],
+		"rscoin": 750,
+		"science": 120,
+		"social": 200,
+		"sport": 400
+	},
+	{
+		"id": 2,
+		"name": "Алексей",
+		"email": "alexey@mail.ru",
+		"surname": "Иванов",
+		"familyname": "Алексеевич",
+		"achivements": ["https://example.com/achievement.jpg"],
+		"rscoin": 500,
+		"science": 50,
+		"social": 100,
+		"sport": 200
+	},
+	{
+		"id": 3,
+		"name": "Екатерина",
+		"email": "ekaterina@mail.ru",
+		"surname": "Смирнова",
+		"familyname": "Ивановна",
+		"achivements": ["https://example.com/achievement.jpg"],
+		"rscoin": 900,
+		"science": 20,
+		"social": 30,
+		"sport": 600
+	},
+	{
+		"id": 4,
+		"name": "Михаил",
+		"email": "mikhail@mail.ru",
+		"surname": "Кузнецов",
+		"familyname": "Викторович",
+		"achivements": ["https://example.com/achievement.jpg"],
+		"rscoin": 300,
+		"science": 80,
+		"social": 150,
+		"sport": 250
+	},
+	{
+		"id": 5,
+		"name": "Анна",
+		"email": "anna@mail.ru",
+		"surname": "Смирнова",
+		"familyname": "Александровна",
+		"achivements": ["https://example.com/achievement.jpg"],
+		"rscoin": 600,
+		"science": 150,
+		"social": 250,
+		"sport": 450
+	},
+	{
+		"id": 6,
+		"name": "Дмитрий",
+		"email": "dmitriy@mail.ru",
+		"surname": "Петров",
+		"familyname": "Дмитриевич",
+		"achivements": ["https://example.com/achievement.jpg"],
+		"rscoin": 400,
+		"science": 100,
+		"social": 200,
+		"sport": 300
+	},
+	{
+		"id": 7,
+		"name": "Ольга",
+		"email": "olga@mail.ru",
+		"surname": "Сидорова",
+		"familyname": "Алексеевна",
+		"achivements": ["https://example.com/achievement.jpg"],
+		"rscoin": 800,
+		"science": 180,
+		"social": 250,
+		"sport": 350
+	}
+]

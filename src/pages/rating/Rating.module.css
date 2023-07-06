@@ -1,0 +1,35 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container__header {
+	font-size: 26px;
+}
+
+.container__rating {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.best__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.rating__rest {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.rating__best {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}

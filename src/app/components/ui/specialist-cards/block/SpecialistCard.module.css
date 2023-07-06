@@ -1,0 +1,56 @@
+.card {
+	padding: 30px 40px;
+	background-color: #fff;
+	border-radius: 12px;
+	/* @apply shadow-lg shadow-[#dbdbdb]; */
+}
+
+.card__fio {
+	display: flex;
+	align-items: center;
+}
+
+.fio__name {
+	margin-left: 16px;
+	font-size: 20px;
+}
+
+.card__coins {
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+	gap: 7px;
+}
+
+.card__button {
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 60px;
+	border-radius: 10px;
+	background: #f9c727;
+	@apply hover:bg-white hover:text-[#f9c727] transition-colors border border-[#f9c727];
+}
+
+.card__statistics{
+	margin-top: 30px;
+}
+
+.card__buttonBlock {
+	margin-top: 47px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.coins__count {
+	font-size: 21px;
+	color: #ebc23c;
+	font-weight: 500;
+}
+
+.statistics__header {
+	margin-top: 15px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
