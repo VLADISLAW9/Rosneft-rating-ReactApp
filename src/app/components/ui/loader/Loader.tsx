@@ -2,14 +2,7 @@ import { FC } from 'react'
 import styles from './Loader.module.css'
 
 const Loader: FC = () => {
-	return (
-		<div className={styles.ldsRing}>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
-	)
+	return <span className={styles.loader}></span>
 }
 
 export default Loader

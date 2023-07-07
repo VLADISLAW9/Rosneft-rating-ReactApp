@@ -6,6 +6,17 @@
 	align-items: center;
 }
 
+@media (max-width: 1900px) {
+	.header {
+		padding: 10px 50px;
+	}
+
+	.user__name {
+		font-size: 12px;
+		margin-left: 17px;
+	}
+}
+
 .logoBlock__logo {
 	width: 125px;
 	flex: 1;

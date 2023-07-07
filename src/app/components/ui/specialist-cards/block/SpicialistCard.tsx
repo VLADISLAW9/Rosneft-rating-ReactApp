@@ -1,17 +1,24 @@
 import { Avatar } from 'antd'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { GoPeople } from 'react-icons/go'
 import { LiaDumbbellSolid } from 'react-icons/lia'
 import { PiGraduationCapLight } from 'react-icons/pi'
 import { ISpecialist } from '../../../../../models/ISpecialist'
 import Rscoin from '../../rscoin/Rscoin'
 import styles from './SpecialistCard.module.css'
+import SpecialistModalWindow from '../modal/SpecialistModalWindow'
 
 interface SpicialistCardProps {
 	spec: ISpecialist
 }
 
 const SpicialistCard: FC<SpicialistCardProps> = ({ spec }) => {
+	const [isModalOpen, setIsModalOpen] = useState(false)
+
+	const showModal = () => {
+		setIsModalOpen(true)
+	}
+
 	return (
 		<li className={styles.card}>
 			<div className={styles.card__fio}>
@@ -52,8 +59,11 @@ const SpicialistCard: FC<SpicialistCardProps> = ({ spec }) => {
 				<div className='w-[80%] h-2 mt-3 rounded-full bg-[#EF6b01]'></div>
 			</div>
 			<div className={styles.card__buttonBlock}>
-				<button className={styles.card__button}>Подробнее</button>
+				<button onClick={showModal} className={styles.card__button}>
+					Подробнее
+				</button>
 			</div>
+			<SpecialistModalWindow  isOpen={isModalOpen} spec={spec} />
 		</li>
 	)
 }

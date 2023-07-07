@@ -12,6 +12,8 @@ import SpecialistsService from '../../services/SpecialistsService'
 import styles from './Rating.module.css'
 
 const RatingPage: FC = () => {
+	const [loading, setLoading] = useState(true)
+
 	const [specialists, setSpecialists] = useState<ISpecialist[]>([])
 	const sortedSpecialists = specialists.sort((a, b) => b.rscoin - a.rscoin)
 	const bestScience = specialists.sort((a, b) => b.science - a.science)[0]
@@ -26,13 +28,18 @@ const RatingPage: FC = () => {
 
 	useEffect(() => {
 		fetchAllSpecialists()
+		setTimeout(() => {
+			setLoading(false)
+		}, 500)
 	}, [])
 
 	return (
 		<div className={styles.container}>
 			<h1 className={styles.container__header}>Рейтинг молодых специалистов</h1>
-			{isLoadingSpecialists ? (
-				<Loader />
+			{loading ? (
+				<div className='mt-32'>
+					<Loader />
+				</div>
 			) : isErrorSpecialists ? (
 				<ErrorMessage message='Произошла ошибка' />
 			) : specialists.length > 0 ? (
