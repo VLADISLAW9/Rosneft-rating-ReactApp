@@ -1,4 +1,4 @@
-import { Avatar } from 'antd'
+import { Avatar, Statistic } from 'antd'
 import { FC, useState } from 'react'
 import { GoPeople } from 'react-icons/go'
 import { LiaDumbbellSolid } from 'react-icons/lia'
@@ -7,6 +7,7 @@ import { ISpecialist } from '../../../../../models/ISpecialist'
 import Rscoin from '../../rscoin/Rscoin'
 import styles from './SpecialistCard.module.css'
 import SpecialistModalWindow from '../modal/SpecialistModalWindow'
+import CountUp from 'react-countup'
 
 interface SpicialistCardProps {
 	spec: ISpecialist
@@ -17,6 +18,10 @@ const SpicialistCard: FC<SpicialistCardProps> = ({ spec }) => {
 
 	const showModal = () => {
 		setIsModalOpen(true)
+	}
+
+	const handleCancel = () => {
+		setIsModalOpen(false)
 	}
 
 	return (
@@ -39,21 +44,22 @@ const SpicialistCard: FC<SpicialistCardProps> = ({ spec }) => {
 				<div className={styles.statistics__header}>
 					<PiGraduationCapLight className='w-7 h-7 text-[#FA9d12]' />
 					<p className='text-[#FA9d12] text-[13px]'>
-						Научные достижения - {spec.science} шт.
+						Научные достижения - <CountUp end={spec.science} /> шт.
 					</p>
 				</div>
 				<div className='w-[100%] h-2 mt-3 rounded-full bg-[#FA9d12]'></div>
 				<div className={styles.statistics__header}>
 					<GoPeople className='w-6 h-6 text-[#f8d108]' />
 					<p className='text-[#f8d108] ml-0.5 text-[13px]'>
-						Общественная деятельность - {spec.social} шт.
+						Общественная деятельность - <CountUp end={spec.social} />
+						шт.
 					</p>
 				</div>
 				<div className='w-[50%] h-2 mt-3 rounded-full bg-[#f8d108]'></div>
 				<div className={styles.statistics__header}>
 					<LiaDumbbellSolid className='w-7 h-7 text-[#EF6b01]' />
 					<p className='text-[#EF6b01] text-[13px]'>
-						Спортивные достижения - {spec.sport} шт.
+						Спортивные достижения - <CountUp end={spec.sport} /> шт.
 					</p>
 				</div>
 				<div className='w-[80%] h-2 mt-3 rounded-full bg-[#EF6b01]'></div>
@@ -63,7 +69,11 @@ const SpicialistCard: FC<SpicialistCardProps> = ({ spec }) => {
 					Подробнее
 				</button>
 			</div>
-			<SpecialistModalWindow  isOpen={isModalOpen} spec={spec} />
+			<SpecialistModalWindow
+				handleCancel={handleCancel}
+				isOpen={isModalOpen}
+				spec={spec}
+			/>
 		</li>
 	)
 }

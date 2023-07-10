@@ -30,7 +30,7 @@ const RatingPage: FC = () => {
 		fetchAllSpecialists()
 		setTimeout(() => {
 			setLoading(false)
-		}, 500)
+		}, 1000)
 	}, [])
 
 	return (

@@ -1,0 +1,71 @@
+.card {
+	padding: 20px;
+}
+
+.card__fio {
+	display: flex;
+	align-items: center;
+}
+
+.info {
+	margin-left: 20px;
+}
+
+.info__name {
+	font-size: 22px;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+
+.info__work {
+	@apply text-[#0000]/70;
+	font-size: 14px;
+	margin-block-end: 3px;
+}
+
+.card__coins{
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.card__statistics{
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.coins__count{
+	font-size: 22px;
+	font-weight: 500;
+	color: #F9C727
+}
+
+.card__achivements{
+	margin-top: 10px;	
+}
+
+.achivements__header{
+	font-size: 22px;
+}
+
+.achivements__items{
+	@apply grid grid-cols-3 max-h-[250px] overflow-y-scroll;
+	margin-top: 15px;
+	gap: 20px;
+}
+
+.achivements__items::-webkit-scrollbar {
+	width: 12px; /* ширина всей полосы прокрутки */
+}
+
+.achivements__items::-webkit-scrollbar-track {
+	@apply bg-stone-300 rounded-full /* цвет зоны отслеживания */;
+}
+
+.achivements__items::-webkit-scrollbar-thumb {
+	@apply bg-stone-400; /* цвет бегунка */
+	border-radius: 20px; /* округлось бегунка */
+	@apply shadow-lg;
+}
