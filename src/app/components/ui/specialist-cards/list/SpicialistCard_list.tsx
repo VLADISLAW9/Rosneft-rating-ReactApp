@@ -1,4 +1,4 @@
-import { Avatar } from 'antd'
+import { Avatar, Progress } from 'antd'
 import { FC } from 'react'
 import { GoPeople } from 'react-icons/go'
 import { LiaDumbbellSolid } from 'react-icons/lia'
@@ -7,6 +7,7 @@ import { ISpecialist } from '../../../../../models/ISpecialist'
 import Rscoin from '../../rscoin/Rscoin'
 import styles from './SpecialistCard.module.css'
 import CountUp from 'react-countup'
+import { convertToProcent } from '../../../../../utils/convertToProcent'
 
 interface SpicialistCardProps {
 	spec: ISpecialist
@@ -40,21 +41,45 @@ const SpicialistCard_list: FC<SpicialistCardProps> = ({ spec, index }) => {
 						Научные достижения - <CountUp end={spec.science} /> шт.
 					</p>
 				</div>
-				<div className='w-[100%] h-2 mt-3 mb-3  rounded-full bg-[#FA9d12]'></div>
+				<Progress
+					percent={convertToProcent(
+						spec.science,
+						spec.social + spec.sport + spec.science
+					)}
+					status='active'
+					strokeColor={'#FA9d12'}
+					showInfo={false}
+				/>
 				<div className={styles.statistics__header}>
 					<GoPeople className='w-6 h-6 text-[#f8d108]' />
 					<p className='text-[#f8d108] ml-0.5 text-[14px]'>
 						Общественная деятельность - <CountUp end={spec.social} /> шт.
 					</p>
 				</div>
-				<div className='w-[50%] h-2 mt-3 mb-3 rounded-full bg-[#f8d108]'></div>
+				<Progress
+					percent={convertToProcent(
+						spec.social,
+						spec.social + spec.sport + spec.science
+					)}
+					status='active'
+					strokeColor={'#f8d108'}
+					showInfo={false}
+				/>
 				<div className={styles.statistics__header}>
 					<LiaDumbbellSolid className='w-7 h-7 text-[#EF6b01]' />
 					<p className='text-[#EF6b01] text-[14px]'>
 						Спортивные достижения - <CountUp end={spec.sport} /> шт.
 					</p>
 				</div>
-				<div className='w-[80%] h-2 mt-3 rounded-full bg-[#EF6b01]'></div>
+				<Progress
+					percent={convertToProcent(
+						spec.sport,
+						spec.social + spec.sport + spec.science
+					)}
+					status='active'
+					strokeColor={'#EF6b01'}
+					showInfo={false}
+				/>
 			</div>
 			<div className={styles.card__buttonBlock}>
 				<button className={styles.card__button}>Подробнее</button>
